@@ -92,17 +92,17 @@ class MainActivity : AppCompatActivity(), TransactionFinishedCallback {
                 first_product.id -> {
                     val itemDetailsList: ArrayList<ItemDetails> = ArrayList()
                     itemDetailsList.add(ItemDetails("1", 20000.0, 1, "20 Point Balance"))
-                    setPaymentTotal(itemDetailsList, 20000.0)
+                    setPaymentTotal(itemDetailsList, itemDetailsList.map { data -> data.price * data.quantity }.sum())
                 }
                 second_product.id -> {
                     val itemDetailsList: ArrayList<ItemDetails> = ArrayList()
                     itemDetailsList.add(ItemDetails("2", 50000.0, 1, "100 Point Balance"))
-                    setPaymentTotal(itemDetailsList, 50000.0)
+                    setPaymentTotal(itemDetailsList, itemDetailsList.map { data -> data.price * data.quantity }.sum())
                 }
                 third_product.id -> {
                     val itemDetailsList: ArrayList<ItemDetails> = ArrayList()
                     itemDetailsList.add(ItemDetails("3", 100000.0, 1, "1000 Point Balance"))
-                    setPaymentTotal(itemDetailsList, 100000.0)
+                    setPaymentTotal(itemDetailsList, itemDetailsList.map { data -> data.price * data.quantity }.sum())
                 }
             }
 
